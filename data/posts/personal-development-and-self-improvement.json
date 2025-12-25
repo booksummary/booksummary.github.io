@@ -1,0 +1,32 @@
+[
+  {
+    "id": "atomic-habits",
+    "title": "Atomic Habits - Tiny Changes, Remarkable Results",
+    "category": "Personal Development & Self-Improvement",
+    "image": "https://images.unsplash.com/photo-150784272343-583f20270319?w=500&h=300&fit=crop",
+    "excerpt": "Learn how tiny incremental changes can lead to remarkable results. James Clear's Atomic Habits provides a framework for building good habits and breaking bad ones.",
+    "author": "James Clear",
+    "date": "2025-01-15",
+    "views": 1250
+  },
+  {
+    "id": "mindset",
+    "title": "Mindset - The New Psychology of Success",
+    "category": "Personal Development & Self-Improvement",
+    "image": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=300&fit=crop",
+    "excerpt": "Carol Dweck explores the concept of growth mindset and how believing in yourself can transform your life and achievements.",
+    "author": "Carol Dweck",
+    "date": "2025-01-10",
+    "views": 980
+  },
+  {
+    "id": "power-of-habit",
+    "title": "The Power of Habit",
+    "category": "Personal Development & Self-Improvement",
+    "image": "https://images.unsplash.com/photo-1493573671867-42ec9a0fb230?w=500&h=300&fit=crop",
+    "excerpt": "Understanding the habit loop and how to transform your personal and professional life through habit change.",
+    "author": "Charles Duhigg",
+    "date": "2025-01-08",
+    "views": 750
+  }
+]

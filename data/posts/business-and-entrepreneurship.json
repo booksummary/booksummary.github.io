@@ -1,0 +1,22 @@
+[
+  {
+    "id": "lean-startup",
+    "title": "The Lean Startup - Build, Measure, Learn",
+    "category": "Business & Entrepreneurship",
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+    "excerpt": "Eric Ries reveals how successful companies use lean principles to validate ideas quickly and minimize waste.",
+    "author": "Eric Ries",
+    "date": "2025-01-12",
+    "views": 1120
+  },
+  {
+    "id": "zero-to-one",
+    "title": "Zero to One - Notes on Startups",
+    "category": "Business & Entrepreneurship",
+    "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop",
+    "excerpt": "Peter Thiel's masterpiece on how to build something nobody else is building and create monopoly value.",
+    "author": "Peter Thiel",
+    "date": "2025-01-05",
+    "views": 890
+  }
+]

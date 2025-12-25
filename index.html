@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BookSummary - Curated book summaries across personal development, business, psychology, finance, and more.">
+    <meta name="keywords" content="book summaries, learning, personal development, business, psychology, finance">
+    <meta name="author" content="BookSummary">
+    <meta name="theme-color" content="#1a1a1a">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://booksummary.github.io/">
+    <meta property="og:title" content="BookSummary - Learn from the best books">
+    <meta property="og:description" content="Curated book summaries across personal development, business, psychology, finance, and more.">
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "BookSummary",
+        "description": "Curated book summaries across multiple categories",
+        "url": "https://booksummary.github.io",
+        "logo": "https://booksummary.github.io/logo.svg"
+    }
+    </script>
+
+    <title>BookSummary - Learn from the Best Books</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="header-container"></div>
+    
+    <main>
+        <!-- Hero Slider -->
+        <section class="hero-section">
+            <div class="slider-container">
+                <div class="slider" id="heroSlider">
+                    <!-- Populated by JS -->
+                </div>
+                <button class="slider-btn prev" id="prevBtn">←</button>
+                <button class="slider-btn next" id="nextBtn">→</button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </section>
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <div class="main-content">
+                <!-- Category Sections -->
+                <section id="category-sections">
+                    <!-- Populated by JS -->
+                </section>
+
+                <!-- Popular Posts Widget -->
+                <section class="widget popular-posts-widget">
+                    <h2>Most Popular</h2>
+                    <div class="widget-content" id="popularPosts">
+                        <!-- Populated by JS -->
+                    </div>
+                </section>
+
+                <!-- Latest Published Widget -->
+                <section class="widget latest-published-widget">
+                    <h2>Just Published</h2>
+                    <div class="widget-content" id="latestPosts">
+                        <!-- Populated by JS -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <div id="sidebar-container"></div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/posts.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
