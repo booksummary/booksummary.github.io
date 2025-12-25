@@ -5,46 +5,53 @@ class PostDetailHandler {
     this.allPosts = []
   }
 
-  // Extract post ID from URL
+  // Extract post ID from URL (from posts/atomic-habits.html → atomic-habits)
   getPostIdFromUrl() {
     const url = window.location.pathname
     const match = url.match(/\/posts\/([^/]+)\.html/)
     return match ? match[1] : null
   }
 
-  // Load all posts and display navigation
+  // Load posts using PostsManager and render navigation
   async initialize() {
-    const PostsManager = {
-      loadPosts: async () => {
-        // Simulate loading posts
-        return new Promise((resolve) => {
-          setTimeout(() => {
-            resolve()
-          }, 1000)
-        })
-      },
-      posts: [
-        { id: "1", title: "First Post" },
-        { id: "2", title: "Second Post" },
-        { id: "3", title: "Third Post" },
-      ],
+    try {
+      // Wait for PostsManager to load all posts
+      const PostsManager = window.PostsManager // Declare PostsManager variable
+      await PostsManager.loadPosts()
+      this.allPosts = PostsManager.posts
+
+      console.log("[v0] Loaded posts:", this.allPosts.length)
+      console.log("[v0] Current post ID:", this.currentPostId)
+
+      // Render navigation after posts are loaded
+      this.renderPostNavigation()
+    } catch (error) {
+      console.error("[v0] Error initializing post detail:", error)
     }
-    await PostsManager.loadPosts()
-    this.allPosts = PostsManager.posts
-    this.renderPostNavigation()
   }
 
-  // Render next/previous post links
+  // Render next/previous post links based on category
   renderPostNavigation() {
-    const currentIndex = this.allPosts.findIndex((p) => p.id === this.currentPostId)
-
-    if (currentIndex === -1) {
-      console.log("[v0] Post not found in data")
+    if (!this.currentPostId) {
+      console.log("[v0] No post ID found")
       return
     }
 
-    const prevPost = currentIndex > 0 ? this.allPosts[currentIndex - 1] : null
-    const nextPost = currentIndex < this.allPosts.length - 1 ? this.allPosts[currentIndex + 1] : null
+    // Find current post
+    const currentPost = this.allPosts.find((p) => p.id === this.currentPostId)
+    if (!currentPost) {
+      console.log("[v0] Current post not found in data")
+      return
+    }
+
+    // Get posts in same category, sorted by date
+    const categoryPosts = this.allPosts
+      .filter((p) => p.category === currentPost.category)
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+
+    const currentIndex = categoryPosts.findIndex((p) => p.id === this.currentPostId)
+    const prevPost = currentIndex > 0 ? categoryPosts[currentIndex - 1] : null
+    const nextPost = currentIndex < categoryPosts.length - 1 ? categoryPosts[currentIndex + 1] : null
 
     const navHTML = `
       <div class="post-nav-wrapper">
@@ -92,8 +99,11 @@ class PostDetailHandler {
   }
 }
 
-// Initialize on page load
+// Initialize on page load - waits for components.js to finish loading
 document.addEventListener("DOMContentLoaded", () => {
-  const handler = new PostDetailHandler()
-  handler.initialize()
+  // Small delay to ensure PostsManager and components are ready
+  setTimeout(() => {
+    const handler = new PostDetailHandler()
+    handler.initialize()
+  }, 100)
 })
