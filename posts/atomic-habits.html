@@ -26,7 +26,7 @@
             "@type": "Person",
             "name": "James Clear"
         },
-        "datePublished": "2025-12-26",
+        "datePublished": "2025-01-15",
         "image": "https://images.unsplash.com/photo-1507842217343-583f20270319?w=800&h=600&fit=crop",
         "publisher": {
             "@type": "Organization",
@@ -44,12 +44,13 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+    <!-- Use relative paths for loading components from parent directory -->
     <div id="header-container"></div>
     
     <main>
         <div class="content-wrapper">
             <div class="main-content">
-                <!-- Post Header -->
+                <!-- Post Article -->
                 <article class="post-article">
                     <div class="post-hero">
                         <img src="https://images.unsplash.com/photo-1507842217343-583f20270319?w=1000&h=600&fit=crop" alt="Atomic Habits Book Cover" class="post-hero-image">
@@ -121,20 +122,22 @@
                         </section>
                     </div>
 
-                    <!-- Navigation Links -->
+                    <!-- Post Navigation - Populated by JS -->
                     <div class="post-navigation" id="postNavigation">
-                        <!-- Populated by JS -->
+                        <!-- Next/Previous posts will be rendered here -->
                     </div>
                 </article>
             </div>
 
-            <!-- Sidebar -->
+            <!-- Sidebar Component -->
             <div id="sidebar-container"></div>
         </div>
     </main>
 
+    <!-- Footer Component -->
     <div id="footer-container"></div>
 
+    <!-- Load scripts in correct order: posts data first, then component loader, then post detail handler -->
     <script src="../js/posts.js"></script>
     <script src="../js/components.js"></script>
     <script src="../js/post-detail.js"></script>
